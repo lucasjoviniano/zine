@@ -79,7 +79,7 @@ const LandingPage = () => {
               }`}
             >
               <div className="w-12 h-12 md:w-20 md:h-20 border border-gray-400 rounded-full bg-white hover:bg-gray-100 transition-colors duration-500">
-                <Image
+                <img
                   src="/zine-logo.png"
                   width={80}
                   height={80}
