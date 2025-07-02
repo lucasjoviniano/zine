@@ -10,8 +10,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === "production" ? "/zine" : "", // Only if deploying to GitHub Pages subdirectory
-  assetPrefix: process.env.NODE_ENV === "production" ? "/zine" : "", // Only if deploying to GitHub Pages subdirectory
+  basePath: "/zine",
 };
 
 const withMDX = createMDX({
