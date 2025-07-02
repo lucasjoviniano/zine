@@ -6,10 +6,12 @@ const nextConfig: NextConfig = {
   // Configure page extensions to include MDX
   pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
   output: "export",
-  basePath: process.env.PAGES_BASE_PATH,
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
+  basePath: process.env.NODE_ENV === "production" ? "/zine" : "", // Only if deploying to GitHub Pages subdirectory
+  assetPrefix: process.env.NODE_ENV === "production" ? "/zine" : "", // Only if deploying to GitHub Pages subdirectory
 };
 
 const withMDX = createMDX({
