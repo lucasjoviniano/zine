@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   // Configure page extensions to include MDX
   pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
+  output: "export",
+  basePath: process.env.PAGES_BASE_PATH,
 
   // Optional: Enable static export if you want to deploy as static site
   // output: 'export',
