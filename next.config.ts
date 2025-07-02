@@ -7,13 +7,9 @@ const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
   output: "export",
   basePath: process.env.PAGES_BASE_PATH,
-
-  // Optional: Enable static export if you want to deploy as static site
-  // output: 'export',
-  // trailingSlash: true,
-  // images: {
-  //   unoptimized: true
-  // }
+  images: {
+    unoptimized: true,
+  },
 };
 
 const withMDX = createMDX({
