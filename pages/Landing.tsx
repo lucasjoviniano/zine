@@ -140,8 +140,7 @@ const contentMeta = {
 };
 
 const LandingPage = () => {
-  const [activeSection, setActiveSection] =
-    useState<keyof typeof contentMap>("abstract");
+  const [activeSection, setActiveSection] = useState<string>("abstract");
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
