@@ -140,14 +140,15 @@ const contentMeta = {
 };
 
 const LandingPage = () => {
-  const [activeSection, setActiveSection] = useState<string>("abstract");
+  const [activeSection, setActiveSection] =
+    useState<keyof typeof contentMap>("abstract");
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
-  const menuItems = [
+  const menuItems: Array<{ id: keyof typeof contentMap; label: string }> = [
     { id: "abstract" as const, label: "resumo" },
     { id: "presentation" as const, label: "apresentação" },
     { id: "biography" as const, label: "autobiografia" },
