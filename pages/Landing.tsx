@@ -1,43 +1,147 @@
-import Image from "next/image";
-import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 
 // Dynamic imports for MDX content
 const contentMap = {
-  introduction: dynamic(() => import("../content/introduction.mdx")),
-  features: dynamic(() => import("../content/introduction.mdx")),
-  design: dynamic(() => import("../content/introduction.mdx")),
-  "case-study": dynamic(() => import("../content/introduction.mdx")),
-  contact: dynamic(() => import("../content/introduction.mdx")),
+  abstract: dynamic(() => import("../content/resumo.mdx")),
+  presentation: dynamic(() => import("../content/apresentacao.mdx")),
+  biography: dynamic(() => import("../content/autobiografia.mdx")),
+  journey: dynamic(() => import("../content/jornada.mdx")),
+  structure: dynamic(() => import("../content/estrutura.mdx")),
+  zune: dynamic(() => import("../content/zune.mdx")),
+  zine: dynamic(() => import("../content/zine.mdx")),
+  firstWindow: dynamic(() => import("../content/primeiraJanela.mdx")),
+  secondWindow: dynamic(() => import("../content/segundaJanela.mdx")),
+  thirdWindow: dynamic(() => import("../content/terceiraJanela.mdx")),
+  quimes: dynamic(() => import("../content/quimes.mdx")),
+  chair: dynamic(() => import("../content/cadeira.mdx")),
+  eye: dynamic(() => import("../content/olho.mdx")),
+  banca: dynamic(() => import("../content/banca.mdx")),
+  body: dynamic(() => import("../content/corpo.mdx")),
+  page: dynamic(() => import("../content/pagina.mdx")),
+  refem: dynamic(() => import("../content/refem.mdx")),
+  digital: dynamic(() => import("../content/digital.mdx")),
+  zone: dynamic(() => import("../content/zone.mdx")),
+  oficina: dynamic(() => import("../content/oficina.mdx")),
+  performance: dynamic(() => import("../content/performance.mdx")),
+  exposition: dynamic(() => import("../content/exposicao.mdx")),
+  site: dynamic(() => import("../content/site.mdx")),
+  inconclusoes: dynamic(() => import("../content/inconclusoes.mdx")),
+  agradecimentos: dynamic(() => import("../content/agradecimentos.mdx")),
+  referencias: dynamic(() => import("../content/referencias.mdx")),
 };
 
 // Content metadata (you could also export this from each MDX file)
 const contentMeta = {
-  introduction: {
-    title: "welcome to our studio",
-    date: "2025-01-15",
+  abstract: {
+    title: "resumo",
+    date: "2025-07-04",
   },
-  features: {
-    title: "what we offer",
-    date: "2025-01-10",
+  presentation: {
+    title: "apresentação",
+    date: "2025-07-04",
   },
-  design: {
-    title: "our approach",
-    date: "2025-01-05",
+  biography: {
+    title: "autobiografia",
+    date: "2025-07-04",
   },
-  "case-study": {
-    title: "recent work",
-    date: "2024-12-20",
+  journey: {
+    title: "jornada",
+    date: "2025-07-04",
   },
-  contact: {
-    title: "start a conversation",
-    date: "2025-01-01",
+  structure: {
+    title: "estrutura",
+    date: "2025-07-04",
+  },
+  zune: {
+    title: "zune",
+    date: "2025-07-04",
+  },
+  zine: {
+    title: "zine",
+    date: "2025-07-04",
+  },
+  firstWindow: {
+    title: "janela 01",
+    date: "2025-07-04",
+  },
+  secondWindow: {
+    title: "janela 02",
+    date: "2025-07-04",
+  },
+  thirdWindow: {
+    title: "janela 03",
+    date: "2025-07-04",
+  },
+  quimes: {
+    title: "quimes",
+    date: "2025-07-04",
+  },
+  chair: {
+    title: "cadeira",
+    date: "2025-07-04",
+  },
+  eye: {
+    title: "olho",
+    date: "2025-07-04",
+  },
+  banca: {
+    title: "banca",
+    date: "2025-07-04",
+  },
+  body: {
+    title: "corpo",
+    date: "2025-07-04",
+  },
+  page: {
+    title: "página",
+    date: "2025-07-04",
+  },
+  refem: {
+    title: "refém",
+    date: "2025-07-04",
+  },
+  digital: {
+    title: "digital",
+    date: "2025-07-04",
+  },
+  zone: {
+    title: "zone",
+    date: "2025-07-04",
+  },
+  oficina: {
+    title: "oficina",
+    date: "2025-07-04",
+  },
+  performance: {
+    title: "performance",
+    date: "2025-07-04",
+  },
+  exposition: {
+    title: "exposição",
+    date: "2025-07-04",
+  },
+  site: {
+    title: "site",
+    date: "2025-07-04",
+  },
+  inconclusoes: {
+    title: "inconclusões",
+    date: "2025-07-04",
+  },
+  agradecimentos: {
+    title: "agradecimentos",
+    date: "2025-07-04",
+  },
+  referencias: {
+    title: "referências",
+    date: "2025-07-04",
   },
 };
 
 const LandingPage = () => {
   const [activeSection, setActiveSection] =
-    useState<keyof typeof contentMap>("introduction");
+    useState<keyof typeof contentMap>("abstract");
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -45,11 +149,32 @@ const LandingPage = () => {
   }, []);
 
   const menuItems = [
-    { id: "introduction" as const, label: "introduction" },
-    { id: "features" as const, label: "features" },
-    { id: "design" as const, label: "design philosophy" },
-    { id: "case-study" as const, label: "case study" },
-    { id: "contact" as const, label: "contact" },
+    { id: "abstract" as const, label: "resumo" },
+    { id: "presentation" as const, label: "apresentação" },
+    { id: "biography" as const, label: "autobiografia" },
+    { id: "journey" as const, label: "jornada" },
+    { id: "structure" as const, label: "estrutura" },
+    { id: "zune" as const, label: "zune" },
+    { id: "zine" as const, label: "zine" },
+    { id: "firstWindow" as const, label: "janela 01" },
+    { id: "secondWindow" as const, label: "janela 02" },
+    { id: "thirdWindow" as const, label: "janela 03" },
+    { id: "quimes" as const, label: "quimes" },
+    { id: "chair" as const, label: "cadeira" },
+    { id: "eye" as const, label: "olho" },
+    { id: "banca" as const, label: "banca" },
+    { id: "body" as const, label: "corpo" },
+    { id: "page" as const, label: "página" },
+    { id: "refem" as const, label: "refém" },
+    { id: "digital" as const, label: "digital" },
+    { id: "zone" as const, label: "zone" },
+    { id: "oficina" as const, label: "oficina" },
+    { id: "performance" as const, label: "performance" },
+    { id: "exposition" as const, label: "exposição" },
+    { id: "site" as const, label: "site" },
+    { id: "inconclusoes" as const, label: "inconclusões" },
+    { id: "agradecimentos" as const, label: "agradecimentos" },
+    { id: "referencias", label: "referências" },
   ];
 
   const ContentComponent = contentMap[activeSection];
