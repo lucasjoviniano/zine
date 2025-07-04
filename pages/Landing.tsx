@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 const contentMap = {
   abstract: dynamic(() => import("../content/resumo.mdx")),
   presentation: dynamic(() => import("../content/apresentacao.mdx")),
+  introduction: dynamic(() => import("../content/introducao.mdx")),
   biography: dynamic(() => import("../content/autobiografia.mdx")),
   journey: dynamic(() => import("../content/jornada.mdx")),
   structure: dynamic(() => import("../content/estrutura.mdx")),
@@ -39,6 +40,10 @@ const contentMeta = {
   },
   presentation: {
     title: "apresentação",
+    date: "2025-07-04",
+  },
+  introduction: {
+    title: "introdução",
     date: "2025-07-04",
   },
   biography: {
@@ -151,6 +156,7 @@ const LandingPage = () => {
   const menuItems: Array<{ id: keyof typeof contentMap; label: string }> = [
     { id: "abstract" as const, label: "resumo" },
     { id: "presentation" as const, label: "apresentação" },
+    { id: "introduction" as const, label: "introdução" },
     { id: "biography" as const, label: "autobiografia" },
     { id: "journey" as const, label: "jornada" },
     { id: "structure" as const, label: "estrutura" },
