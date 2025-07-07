@@ -200,8 +200,12 @@ const LandingPage = () => {
               }`}
             >
               <h1 className="text-5xl md:text-7xl font-light tracking-tight text-gray-900 leading-none">
-                zune zine zone
+                [zune zine zone]
               </h1>
+              <p className="text-sm md:text-base text-gray-500 mt-2">
+                entre manualidades e digitalidades na experimentação gráfica e
+                as convergências de e sobre arquitetura.
+              </p>
             </div>
 
             <div
