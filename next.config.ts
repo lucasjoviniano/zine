@@ -10,7 +10,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/zunezinezone",
 };
 
 const withMDX = createMDX({
